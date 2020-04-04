@@ -19,7 +19,7 @@ export default class Comp2 extends Component {
 
             </p>
             <br/><br/>
-            <a href="" onClick = {() => {this.setState({comp1 : true})}}>Go back to home page</a>
+            <a href="#" onClick = {() => {this.setState({comp1 : true})}}>Go back to home page</a>
         </Fragment>
     }
 } 
