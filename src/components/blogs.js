@@ -1,4 +1,7 @@
-import React, { Component } from "react"
+import Tooltip from "@material-ui/core/Tooltip"
+import ScrollUpButton from "react-scroll-up-button"
+import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom"
+import React, { Component,Fragment } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
@@ -7,7 +10,7 @@ import CardContent from "@material-ui/core/CardContent"
 import CardHeader from "@material-ui/core/CardHeader"
 import CardMedia from "@material-ui/core/CardMedia"
 import Button from "@material-ui/core/Button"
-import Container from "@material-ui/core/Container"
+import Container from "react-bootstrap/TabContainer"
 import IconButton from '@material-ui/core/IconButton';
 import ArrowDropUpRoundedIcon from '@material-ui/icons/ArrowDropUpRounded';
 import Row from "react-bootstrap/Row"
@@ -29,6 +32,7 @@ import Choicescomp from "./choicescomp"
 import Turnrightcomp from "./turnrightcomp"
 import Icantdoitcomp from "./icantdoitcomp"
 import Home from "./home"
+import Footercomp from "./footercomp"
 export default class Blogs extends Component {
     state = {
         continueblog1: false,
@@ -65,12 +69,29 @@ export default class Blogs extends Component {
         if (this.state.continueblog14) return <Turnrightcomp />
         if (this.state.continueblog15) return <Icantdoitcomp />
         if (this.state.home) return <Home />
-        return <div className="container-fluid">
-            <IconButton aria-label="down" className="float-right" onClick={() => this.setState({ home: true })}>
+        return <Fragment>
+        
+        
+        <div className="container-fluid" style={{backgroundColor:"black"}}>
+           
+           
+            <BrowserRouter>
+                <Link to="/home">
+                <Tooltip title="Go back to home page" placement="bottom" arrow>
+                <IconButton aria-label="down" className="btn btn-block" onClick={() => this.setState({ home: true })}>
                 <Badge pill variant="primary">
                     <ArrowDropUpRoundedIcon />
                 </Badge>
-            </IconButton>
+                </IconButton>
+                </Tooltip>
+                </Link>
+                <Switch>
+                    <Route exact path="/home" component={Home}/>
+                </Switch>
+            </BrowserRouter>
+        
+          
+            
             <Row>
                 <div className=" col-md-3"  >
                     <Card>
@@ -218,7 +239,7 @@ export default class Blogs extends Component {
                                     LIFE
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                    It's completely ok to start living life at thirty, forty, fifty or at whatever age you realize that you aren't living your life. Trust me, it completely is. Irrespective of whatever age you belong to,...
+                                    It's completely ok to start living life at thirty, forty, fifty or at whatever age you realize that you aren't living your life. Trust me, it completely is. Irrespective of whatever age you belong to,you are meant to have an amazing life...
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -297,7 +318,7 @@ export default class Blogs extends Component {
                                     Does size defines power?
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                COVID-19, such a tiny creature, we can't even see it. It is changing the world. This virus has proved that size doesn't matter at all. It has emerged to be powerful even without a single...
+                                COVID-19, such a tiny creature, we can't even see it. It is changing the world. This virus has proved that size doesn't matter at all. It has emerged to be powerful even without a single weapon. People with immense influence...
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -338,7 +359,7 @@ export default class Blogs extends Component {
                                    Turn right 
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Life is a bumpy long road to cover. The day we are born we start to walk. Every day, at every point of life we walk. Sometimes alone, sometimes with beautiful people. The beauty of this journey lies in....
+                                Life is a bumpy long road to cover. The day we are born we start to walk. Every day, at every point of life we walk. Sometimes alone, sometimes with beautiful people. The beauty of this journey lies in...
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -357,7 +378,7 @@ export default class Blogs extends Component {
                                    I can't do it.
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                When we were cute little human beings, just growing up to face the world, we were taught the limitations of humanity. We were told to adhere to the practical aspect of everything...
+                                When we were cute little human beings, just growing up to face the world, we were taught the limitations of humanity. We were told to adhere to the practical aspect of everything . We were asked to lay down...
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -368,8 +389,10 @@ export default class Blogs extends Component {
                         </CardActions>
                     </Card>
                 </div>
-            </Row>
-            <br/><br/>
-        </div>
+          </Row> 
+          <br/>
+          </div>
+          <Footercomp/>
+          </Fragment>
     }
 }

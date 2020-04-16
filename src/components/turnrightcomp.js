@@ -82,7 +82,7 @@ export default class Comp2 extends React.Component {
         this.setState({
             showMenu: true,
             hidden: "hidden",
-            contentCol: "col-md-9"
+            contentCol: "col-md-12"
         })
     }
     handleClose = () => {
@@ -110,11 +110,11 @@ export default class Comp2 extends React.Component {
         if (this.state.turnrightcomp) return <Turnrightcomp />
         if (this.state.icantdoitcomp) return <Icantdoitcomp />
         return <Fragment>
-            <div className="container-fluid">
-                <Row>
+            <div className="offset-md-2 col-md-8 offset-2">
+              
                     {
                         this.state.showMenu ?
-                            <Card className="col-md-3">
+                            <Card className="col-md-12">
                                 <CardContent>
                                     <IconButton className="float-right" onClick={this.handleClose} >
                                         <BBadge pill variant="dark">
@@ -250,7 +250,7 @@ export default class Comp2 extends React.Component {
                                 <br />
                             </Card> :
                             <div />
-                    }
+                    }<br/>
                     <Card style={this.state.root} className={this.state.contentCol}>
                         <CardActionArea>
                             <CardContent>
@@ -286,7 +286,7 @@ export default class Comp2 extends React.Component {
                             </IconButton>
                         </CardActions>
                     </Card>
-                </Row>
+                
                 <br /><br />
                 {
                     this.state.viewComment ?

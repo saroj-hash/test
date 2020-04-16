@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node" : "12.15.0" ,
-    "npm" : "6.13.4"
+    "node": "12.15.0",
+    "npm": "6.13.4"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.9",
@@ -17,7 +17,8 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-scroll-up-button": "^1.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
