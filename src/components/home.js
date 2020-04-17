@@ -87,7 +87,7 @@ export default class Home extends Component {
                     </Typography>
                    </div>
                    <br/><br/>
-                   <img src={Photo4} className="img img-fluid"/> 
+                   <img src={Photo2} className="img img-fluid"/> 
                    <br/><br/><br/><br/>
                     <div className="offset-md-2 col-md-8 offset-md-2">
                             <Typography variant="h5" component="h5" style={{color:"orange", fontFamily: "Berlin Sans FB"}} className="text-left">
@@ -97,20 +97,15 @@ export default class Home extends Component {
                             </Typography>
                         </div>
                         <br/><br/>
-                    <BrowserRouter>
-                        <Link to="/blogs">
+                    
                             <Tooltip title="Go directly to blogs" placement="top" arrow>
-                                <IconButton aria-label="down" className="btn btn-block" onClick={() => { this.setState({ blogs: true }) }}>
+                                <IconButton aria-label="down" className="btn btn-block" onClick={() => { this.setState({ blogs: true }) }} component={Link} to="/blogs">
                                     <Badge pill variant="danger">
                                         <ArrowDropDownRoundedIcon />
                                     </Badge>
                                 </IconButton>
                             </Tooltip>
-                        </Link>
-                        <Switch>
-                            <Route exact path="/blogs" component={Blogs} />
-                        </Switch>
-                    </BrowserRouter>
+                        
                     <br/><br/>
                 </div>
                 <Footercomp />

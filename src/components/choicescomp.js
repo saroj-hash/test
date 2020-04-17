@@ -1,5 +1,5 @@
 
-
+import {Link} from "react-router-dom"
 import React, { Fragment } from "react"
 import Footercomp from "./footercomp"
 import Blogs from "./blogs"
@@ -134,122 +134,122 @@ export default class Comp2 extends React.Component {
                                 </Typography>
 
                                 <br />
-                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} >
+                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} component={Link} to="/blogs/thisshalltoopass" >
                                     <h5>
                                         <BBadge pill variant="dark">
                                             This shall too pass
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} >
+                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} component={Link} to="/blogs/autumn">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Autumn
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })} component={Link} to="/blogs/deardad" >
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Dear Dad,
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })} component={Link} to="/blogs/dearrachel">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Dear Rachel,
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })} component={Link} to="/blogs/dearfriends">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Dear "Friends"
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ fearcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ fearcomp: true })} component={Link} to="/blogs/fear">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Fear
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
-                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}  component={Link} to="/blogs/thehappinessmantra">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             The Happiness Mantra
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ lifecomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ lifecomp: true })} component={Link} to="/blogs/life">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             LIFE
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })} component={Link} to="/blogs/myfavwhitesneaker">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             My Favorite white sneaker
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })} component={Link} to="/blogs/thequarantinemantra">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             The Quarantine Mantra
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })} component={Link} to="/blogs/selflove">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Self Love
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large">
+                                <Button size="large" onClick={() => this.setState({ sizecomp: true })}component={Link} to="/blogs/doessizedefinepoewer">
                                     <h5>
-                                        <BBadge pill variant="dark" onClick={() => this.setState({ sizecomp: true })}>
+                                        <BBadge pill variant="dark" >
                                             Does size defines power?
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ choicescomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ choicescomp: true })} component={Link} to="/blogs/choices">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Choices
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
 
                                 <Button size="large">
                                     <h5>
-                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })}>
+                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })} component={Link} to="/blogs/turnright">
                                             Turn Right
-                                                                         </BBadge>
+                                     </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })} component={Link} to="/blogs/icantdoit">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             I can't do it
-                                                                        </BBadge>
+                                    </BBadge>
                                     </h5>
                                 </Button>
                             </CardContent>
@@ -280,14 +280,10 @@ export default class Comp2 extends React.Component {
                                 Make choices and take action, some days will be easier and others will be hard. Be it easy or hard the only way to get there is, choose to start.
                                 "A hard thing is done by figuring out how to start."
                              </Typography>
-                            <br />
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                -From a fellow miserably heartbroken loser ...
-                                                                </Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })}>
+                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })} component={Link} to="/blogs">
                             Back
                                                                     </Button>
                         <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>

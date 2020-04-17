@@ -1,4 +1,6 @@
 import React, { Fragment } from "react"
+import {Link} from "react-router-dom"
+import Footercomp from "./footercomp"
 import Blogs from "./blogs"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/TabContainer"
@@ -94,7 +96,6 @@ export default class Comp2 extends React.Component {
             contentCol: "col-md-12"
         })
     }
-
     render() {
         if (this.state.goback) return <Blogs />
         if (this.state.thisshalltoopasscomp) return <Thisshalltoopasscomp />
@@ -113,195 +114,198 @@ export default class Comp2 extends React.Component {
         if (this.state.turnrightcomp) return <Turnrightcomp />
         if (this.state.icantdoitcomp) return <Icantdoitcomp />
         return <Fragment>
-            <div className="offset-md-2 col-md-8 offset-2">
-               
-                    {
-                        this.state.showMenu ?
-                            <Card className="col-md-12">
-                                <CardContent>
-                                    <IconButton className="float-right" onClick={this.handleClose} >
-                                        <BBadge pill variant="dark">
-                                            <CancelPresentationIcon />
-                                        </BBadge>
-                                    </IconButton>
-                                    <br /><br />
 
-                                    <Typography variant="h3" component="h3" className="text-center">
-                                        <BBadge pill variant="dark"> CONTENTS </BBadge>
-                                    </Typography>
 
-                                    <br />
-                                    <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                This shall too pass
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ autumncomp: true })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Autumn
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ deardadcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Dad,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Rachel,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear "Friends"
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ fearcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Fear
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                    <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Happiness Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ lifecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                LIFE
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                My Favorite white sneaker
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Quarantine Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ selflovecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Self Love
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ sizecomp: true })}>
-                                                Does size defines power?
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ choicescomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Choices
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })}>
-                                                Turn Right
-                                     </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                I can't do it
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                </CardContent>
-                                <br />
-                            </Card> :
-                            <div />
-                    }
-                    <br />
-                    <Card style={this.state.root} className={this.state.contentCol}>
-                        <CardActionArea>
+            <div className="offset-md-2 col-md-8 offset-md-2">
+                {
+                    this.state.showMenu ?
+                        <Card className="col-md-12">
                             <CardContent>
-                                <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <IconButton className="float-right" onClick={this.handleClose} >
                                     <BBadge pill variant="dark">
-                                        <MenuOpenIcon />
+                                        <CancelPresentationIcon />
                                     </BBadge>
                                 </IconButton>
-                                <br />
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Dear Dad,
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    I hope, you're doing well. I am doing good. Is mom okay? How are Sheldon and Jessie? I heard about their big news, and I just can't be less happy. I heard about cousin Lynn, and I hope he gets okay. Believe it or not, I miss you folks back there a lot. I just want to come back home and stay there permanently! But you didn't raise me to show my back on the country. You taught me good and these are your principles that have taken me so far, and I believe, these would help me spend those endless nights in the bunker as well.
-                                    Remember the night, you came back from Afghanistan? Sheldon was 4, and mom asked me to look after him, while she goes and picks you up from the station. That was the first time, I thought, yes I am responsible for someone like my Dad. Like, he looks after not just our family, but everyone else's while being days and nights stationed at a remote war zone, with absolutely no idea if he will see the faces of his kids after the very night. Well, I didn't live up to mom and you that day either, for Sheldon's stupidity of thinking that he can fly, consequently breaking a tooth. Apart from that fact, I acted just the way a big brother would. I cleaned up his mess, fed him, and tried to make him fall asleep, but oh dear God, was he nightmare back then! And now my baby brother is all grown up and ready to be a groom. I am extremely proud of him and his achievements. I remember that night when you guys returned home, I hid inside the attic, in the fear that mom would scold me for Sheldon's broken tooth. He immediately ran off to Mom showing his broken tooth. Mom called for me and I will never forget what you said to me that night.
-                                    You found me inside the attic and came in and sat beside me and said,
-                                    "Having a man down doesn't mean you will retreat yourselves from the war. It means you will have to push even harder to defend your squad, being selfless and brave at the same time. Son, you did the same.
-                                    So what, Sheldon broke a tooth, it will grow back. But you didn't get scared and immediately called your mom leaving her all worried. You looked after him, and kept him safe until we returned. You did a commendable job and we are proud of you."
-                                    Dad, you use to say those war stories. I never got afraid. Those stories ignited my zeal to serve my country even more.
-                                    I never said this before, but I love you Dad! I love you so much. You are the reason behind everything, I am remotely standing for. And I hope, you can also stand up to that fact that I have made you proud, one day.
-                                    Things have not been going well around here. Enemy is closing forward on us and we are left with less resources. This time, I am not sure, if I can make this. Well, I am not even sure that I will be counting my breathes while you will be reading this letter. I hope everything will be okay around there.
-                                    Tell Mom, I love her. Tell Grammy, I am counting the rosary she gave me.
-                                    Give Sheldon my love. Congratulate both of them on my behalf. Wish you the best holidays ahead.
-                        </Typography>
-                                <br />
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    - Your Son, Mike...
-                        </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={() => this.setState({ goback: true })}>
-                                Back
-                    </Button>
-                            <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
-                                Comment
-                    </Button>
-                            <IconButton onClick={this.handleLike}>
-                                <BBadge pill variant={this.state.color}>
+                                <br /><br />
 
-                                    <Badge badgeContent={this.state.badgeContent} color="primary">
-                                        <FavoriteBorderIcon />
-                                    </Badge>
+                                <Typography variant="h3" component="h3" className="text-center">
+                                    <BBadge pill variant="dark"> CONTENTS </BBadge>
+                                </Typography>
+
+                                <br />
+                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} component={Link} to="/blogs/thisshalltoopass" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            This shall too pass
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} component={Link} to="/blogs/autumn">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Autumn
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })} component={Link} to="/blogs/deardad" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Dad,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })} component={Link} to="/blogs/dearrachel">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Rachel,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })} component={Link} to="/blogs/dearfriends">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear "Friends"
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ fearcomp: true })} component={Link} to="/blogs/fear">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Fear
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}  component={Link} to="/blogs/thehappinessmantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Happiness Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ lifecomp: true })} component={Link} to="/blogs/life">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            LIFE
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })} component={Link} to="/blogs/myfavwhitesneaker">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            My Favorite white sneaker
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })} component={Link} to="/blogs/thequarantinemantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Quarantine Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })} component={Link} to="/blogs/selflove">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Self Love
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ sizecomp: true })}component={Link} to="/blogs/doessizedefinepoewer">
+                                    <h5>
+                                        <BBadge pill variant="dark" >
+                                            Does size defines power?
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ choicescomp: true })} component={Link} to="/blogs/choices">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Choices
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large">
+                                    <h5>
+                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })} component={Link} to="/blogs/turnright">
+                                            Turn Right
+                                     </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })} component={Link} to="/blogs/icantdoit">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            I can't do it
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                            </CardContent>
+                            <br />
+                        </Card>
+                        :
+                        <div />
+
+                }
+                <br />
+                <Card style={this.state.root} className={this.state.contentCol}>
+                    <CardActionArea>
+                        <CardContent>
+                            <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <BBadge pill variant="dark">
+                                    <MenuOpenIcon />
                                 </BBadge>
                             </IconButton>
-                        </CardActions>
-                    </Card>
+                            <br />
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Dear Dad,
+                                                                                        </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                I hope, you're doing well. I am doing good. Is mom okay? How are Sheldon and Jessie? I heard about their big news, and I just can't be less happy. I heard about cousin Lynn, and I hope he gets okay. Believe it or not, I miss you folks back there a lot. I just want to come back home and stay there permanently! But you didn't raise me to show my back on the country. You taught me good and these are your principles that have taken me so far, and I believe, these would help me spend those endless nights in the bunker as well.
+                                Remember the night, you came back from Afghanistan? Sheldon was 4, and mom asked me to look after him, while she goes and picks you up from the station. That was the first time, I thought, yes I am responsible for someone like my Dad. Like, he looks after not just our family, but everyone else's while being days and nights stationed at a remote war zone, with absolutely no idea if he will see the faces of his kids after the very night. Well, I didn't live up to mom and you that day either, for Sheldon's stupidity of thinking that he can fly, consequently breaking a tooth. Apart from that fact, I acted just the way a big brother would. I cleaned up his mess, fed him, and tried to make him fall asleep, but oh dear God, was he nightmare back then! And now my baby brother is all grown up and ready to be a groom. I am extremely proud of him and his achievements. I remember that night when you guys returned home, I hid inside the attic, in the fear that mom would scold me for Sheldon's broken tooth. He immediately ran off to Mom showing his broken tooth. Mom called for me and I will never forget what you said to me that night.
+                                You found me inside the attic and came in and sat beside me and said,
+                                "Having a man down doesn't mean you will retreat yourselves from the war. It means you will have to push even harder to defend your squad, being selfless and brave at the same time. Son, you did the same.
+                                So what, Sheldon broke a tooth, it will grow back. But you didn't get scared and immediately called your mom leaving her all worried. You looked after him, and kept him safe until we returned. You did a commendable job and we are proud of you."
+                                Dad, you use to say those war stories. I never got afraid. Those stories ignited my zeal to serve my country even more.
+                                I never said this before, but I love you Dad! I love you so much. You are the reason behind everything, I am remotely standing for. And I hope, you can also stand up to that fact that I have made you proud, one day.
+                                Things have not been going well around here. Enemy is closing forward on us and we are left with less resources. This time, I am not sure, if I can make this. Well, I am not even sure that I will be counting my breathes while you will be reading this letter. I hope everything will be okay around there.
+                                Tell Mom, I love her. Tell Grammy, I am counting the rosary she gave me.
+                                Give Sheldon my love. Congratulate both of them on my behalf. Wish you the best holidays ahead.
+                        </Typography>
+                            <br />
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                - Your Son, Mike...
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })} component={Link} to="/blogs">
+                            Back
+                                                                                            </Button>
+                        <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
+                            Comment
+                                                                                        </Button>
+                        <IconButton onClick={this.handleLike}>
+                            <BBadge pill variant={this.state.color}>
+
+                                <Badge badgeContent={this.state.badgeContent} color="primary">
+                                    <FavoriteBorderIcon />
+                                </Badge>
+                            </BBadge>
+                        </IconButton>
+                    </CardActions>
+                </Card>
 
                 <br /><br />
                 {
@@ -309,6 +313,11 @@ export default class Comp2 extends React.Component {
                         <Comment /> :
                         <div></div>
                 }
+
+            </div>
+
+            <div style={{ width: "100%" }}>
+                <Footercomp />
             </div>
         </Fragment>
     }

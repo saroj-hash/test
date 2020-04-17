@@ -1,4 +1,9 @@
+
+
+
+import { Link } from "react-router-dom"
 import React, { Fragment } from "react"
+import Footercomp from "./footercomp"
 import Blogs from "./blogs"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/TabContainer"
@@ -10,6 +15,9 @@ import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import BootstrapButton from "react-bootstrap/Button"
+// import Continueblog1 from "./comp1"
+import Form from "react-bootstrap/Form"
 import Comment from "./comment"
 import IconButton from "@material-ui/core/IconButton"
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -109,183 +117,187 @@ export default class Comp2 extends React.Component {
         if (this.state.turnrightcomp) return <Turnrightcomp />
         if (this.state.icantdoitcomp) return <Icantdoitcomp />
         return <Fragment>
-            <div className="offset-md-2 col-md-8 offset-2">
-                
-                    {
-                        this.state.showMenu ?
-                            <Card className="col-md-12">
-                                <CardContent>
-                                    <IconButton className="float-right" onClick={this.handleClose} >
-                                        <BBadge pill variant="dark">
-                                            <CancelPresentationIcon />
-                                        </BBadge>
-                                    </IconButton>
-                                    <br /><br />
 
-                                    <Typography variant="h3" component="h3" className="text-center">
-                                        <BBadge pill variant="dark"> CONTENTS </BBadge>
-                                    </Typography>
 
-                                    <br />
-                                    <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                This shall too pass
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ autumncomp: true })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Autumn
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ deardadcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Dad,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Rachel,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear "Friends"
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ fearcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Fear
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                    <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Happiness Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ lifecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                LIFE
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                My Favorite white sneaker
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Quarantine Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ selflovecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Self Love
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ sizecomp: true })}>
-                                                Does size defines power?
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ choicescomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Choices
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })}>
-                                                Turn Right
-                                     </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                I can't do it
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                </CardContent>
-                                <br />
-                            </Card> :
-                            <div />
-                    }
-                    <br />
-                    <Card style={this.state.root} className={this.state.contentCol}>
-                        <CardActionArea>
+            <div className="offset-md-2 col-md-8 offset-md-2">
+                {
+                    this.state.showMenu ?
+                        <Card className="col-md-12">
                             <CardContent>
-                                <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <IconButton className="float-right" onClick={this.handleClose} >
                                     <BBadge pill variant="dark">
-                                        <MenuOpenIcon />
+                                        <CancelPresentationIcon />
                                     </BBadge>
-                                </IconButton><br />
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    The Quarantine Mantra
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    First things first, during this pandemic wash your hands, take care of your health and maintain social distancing with some social media distancing. The world is rejuvenating now and trying to make us do the same. A Lot of people are dying every day, may their souls rest peacefully and a lot of people are suffering, we should pray for their fast recovery. Everything has a dark and a bright side. Now let's talk about the bright side. If you're not in the combat zone in this fight, you have a lot of free time, I mean apart from work from home, don't have much to worry about. So if you are not using this time to prioritize your purpose, you are wasting this opportunity which you may never get again. This should be quarantine and hustle, not quarantine and chill. There are tons of things to do which are productive. Make a schedule and stick to it. Utilize this time to learn new languages, improve your coding skills. A lot of problems are out there, pick anyone, find a solution and you never know, this might end up in discoveries or inventions which may change the world. Read as much as you can, read about stocks, investments, real estate, funds. Plan for a side hustle. Makeover your room, try a different theme, as of now the café theme would be best because customizations won't require many new pieces of stuff, you can make paintings, write quotes and use them in your room. Do not go out to buy new stuff. Just arrange and rearrange, this will improve your cleaning skill and next time your maid doesn't come you don't have to lose your shit. Update resume and LinkedIn profile. Assess your budget, a recession is near. Workout and eat homemade foods. Cook if you love to, if not you can give a try it will be fun. Spend time with family, your pet, once everything will be under control you might not get this, you have to run fast, maybe faster than the old days. Find ways to heal yourself internally, start meditation it helps in rejuvenation. Stay connected with your friends through video chatting platforms, plan for trips, parties once this is over. Try Quibi, a new streaming service has been launched.
-                                    Don't kill your vibe worrying about this uncertainty because you can't control everything around you. Choose anything which can be productive and do it, prepare yourself for what's coming next. Do not just sit with your Netflix. Do something so that it will be worth celebrating after everything falls into place.
-                        </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={() => this.setState({ goback: true })}>
-                                Back
-                    </Button>
-                            <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
-                                Comment
-                    </Button>
-                            <IconButton onClick={this.handleLike}>
-                                <BBadge pill variant={this.state.color}>
+                                </IconButton>
+                                <br /><br />
 
-                                    <Badge badgeContent={this.state.badgeContent} color="primary">
-                                        <FavoriteBorderIcon />
-                                    </Badge>
+                                <Typography variant="h3" component="h3" className="text-center">
+                                    <BBadge pill variant="dark"> CONTENTS </BBadge>
+                                </Typography>
+
+                                <br />
+                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} component={Link} to="/blogs/thisshalltoopass" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            This shall too pass
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} component={Link} to="/blogs/autumn">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Autumn
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })} component={Link} to="/blogs/deardad" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Dad,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })} component={Link} to="/blogs/dearrachel">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Rachel,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })} component={Link} to="/blogs/dearfriends">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear "Friends"
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ fearcomp: true })} component={Link} to="/blogs/fear">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Fear
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}  component={Link} to="/blogs/thehappinessmantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Happiness Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ lifecomp: true })} component={Link} to="/blogs/life">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            LIFE
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })} component={Link} to="/blogs/myfavwhitesneaker">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            My Favorite white sneaker
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })} component={Link} to="/blogs/thequarantinemantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Quarantine Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })} component={Link} to="/blogs/selflove">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Self Love
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ sizecomp: true })}component={Link} to="/blogs/doessizedefinepoewer">
+                                    <h5>
+                                        <BBadge pill variant="dark" >
+                                            Does size defines power?
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ choicescomp: true })} component={Link} to="/blogs/choices">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Choices
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large">
+                                    <h5>
+                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })} component={Link} to="/blogs/turnright">
+                                            Turn Right
+                                     </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })} component={Link} to="/blogs/icantdoit">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            I can't do it
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                            </CardContent>
+                            <br />
+                        </Card>
+                        :
+                        <div />
+
+                }
+                <br />
+                <Card style={this.state.root} className={this.state.contentCol}>
+                    <CardActionArea>
+                        <CardContent>
+                            <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <BBadge pill variant="dark">
+                                    <MenuOpenIcon />
                                 </BBadge>
                             </IconButton>
-                        </CardActions>
-                    </Card>
-               
+                            <br />
+                            <Typography gutterBottom variant="h5" component="h2">
+                                The Quarantine Mantra
+</Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                First things first, during this pandemic wash your hands, take care of your health and maintain social distancing with some social media distancing. The world is rejuvenating now and trying to make us do the same. A Lot of people are dying every day, may their souls rest peacefully and a lot of people are suffering, we should pray for their fast recovery. Everything has a dark and a bright side. Now let's talk about the bright side. If you're not in the combat zone in this fight, you have a lot of free time, I mean apart from work from home, don't have much to worry about. So if you are not using this time to prioritize your purpose, you are wasting this opportunity which you may never get again. This should be quarantine and hustle, not quarantine and chill. There are tons of things to do which are productive. Make a schedule and stick to it. Utilize this time to learn new languages, improve your coding skills. A lot of problems are out there, pick anyone, find a solution and you never know, this might end up in discoveries or inventions which may change the world. Read as much as you can, read about stocks, investments, real estate, funds. Plan for a side hustle. Makeover your room, try a different theme, as of now the café theme would be best because customizations won't require many new pieces of stuff, you can make paintings, write quotes and use them in your room. Do not go out to buy new stuff. Just arrange and rearrange, this will improve your cleaning skill and next time your maid doesn't come you don't have to lose your shit. Update resume and LinkedIn profile. Assess your budget, a recession is near. Workout and eat homemade foods. Cook if you love to, if not you can give a try it will be fun. Spend time with family, your pet, once everything will be under control you might not get this, you have to run fast, maybe faster than the old days. Find ways to heal yourself internally, start meditation it helps in rejuvenation. Stay connected with your friends through video chatting platforms, plan for trips, parties once this is over. Try Quibi, a new streaming service has been launched.
+                                Don't kill your vibe worrying about this uncertainty because you can't control everything around you. Choose anything which can be productive and do it, prepare yourself for what's coming next. Do not just sit with your Netflix. Do something so that it will be worth celebrating after everything falls into place.
+</Typography>
+                            <br />
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })} component={Link} to="/blogs">
+                            Back
+                                                                                                                                                                                                                                            </Button>
+                        <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
+                            Comment
+                                                                                                                                                                                                                                        </Button>
+                        <IconButton onClick={this.handleLike}>
+                            <BBadge pill variant={this.state.color}>
+
+                                <Badge badgeContent={this.state.badgeContent} color="primary">
+                                    <FavoriteBorderIcon />
+                                </Badge>
+                            </BBadge>
+                        </IconButton>
+                    </CardActions>
+                </Card>
 
                 <br /><br />
                 {
@@ -293,6 +305,11 @@ export default class Comp2 extends React.Component {
                         <Comment /> :
                         <div></div>
                 }
+
+            </div>
+
+            <div style={{ width: "100%" }}>
+                <Footercomp />
             </div>
         </Fragment>
     }

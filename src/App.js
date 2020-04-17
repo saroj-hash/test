@@ -13,7 +13,21 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import Home from "./components/home"
 import Blogs from "./components/blogs"
 import Subscribe from "./components/subscribe"
-
+import Thisshalltoopass from "./components/thisshalltoopasscomp"
+import Autumn from "./components/autumncomp"
+import Choices from "./components/choicescomp"
+import Deardad from "./components/deardadcomp"
+import Dearrachel from "./components/dearrachelcomp"
+import Dearfriends from "./components/dearfriendscomp"
+import Fear from "./components/fearcomp"
+import ICDI from "./components/icantdoitcomp"
+import Life from "./components/lifecomp"
+import MFWS from "./components/myfavwhitesneakercomp"
+import SLove from "./components/selflovecomp"
+import Size from "./components/sizecomp"
+import THM from "./components/thehappinessmatracomp"
+import TQM from "./components/thequarantinemantracomp"
+import Tright from "./components/turnrightcomp"
 export default class App extends Component {
   state={
       style1 : {color:"orange"},
@@ -26,7 +40,7 @@ export default class App extends Component {
   }
   changeStyle1 = () =>{
     this.setState({
-      style1 : {color:"white"}
+      style1 : {color:"lavender"}
     })
   }
   changeStyle2 = () => {
@@ -36,7 +50,7 @@ export default class App extends Component {
   }
   changeStyle3 = () =>{
     this.setState({
-      style2 : {backgroundColor:"white"}
+      style2 : {backgroundColor:"lavender"}
     })
   }
   changeStyle4 = () => {
@@ -46,7 +60,7 @@ export default class App extends Component {
   }
   changeStyle5 = () =>{
     this.setState({
-      style3 : {color:"white"}
+      style3 : {color:"lavender"}
     })
   }
   changeStyle6 = () => {
@@ -56,7 +70,7 @@ export default class App extends Component {
   }
   changeStyle7 = () =>{
     this.setState({
-      style4 : {color:"white"}
+      style4 : {color:"lavender"}
     })
   }
   changeStyle8 = () => {
@@ -66,7 +80,7 @@ export default class App extends Component {
   }
   changeStyle9 = () =>{
     this.setState({
-      style5 : {backgroundColor:"white"}
+      style5 : {backgroundColor:"lavender"}
     })
   }
   changeStyle10 = () => {
@@ -76,7 +90,7 @@ export default class App extends Component {
   }
   changeStyle11 = () =>{
     this.setState({
-      style6 : {backgroundColor:"white"}
+      style6 : {backgroundColor:"lavender"}
     })
   }
   changeStyle12 = () => {
@@ -86,7 +100,7 @@ export default class App extends Component {
   }
   changeStyle13 = () =>{
     this.setState({
-      style7 : {backgroundColor:"white"}
+      style7 : {backgroundColor:"lavender"}
     })
   }
   changeStyle14 = () => {
@@ -135,6 +149,21 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/home" component={Home} />
             <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/blogs/thisshalltoopass" component={Thisshalltoopass} />
+            <Route exact path="/blogs/autumn" component={Autumn} />
+            <Route exact path="/blogs/deardad" component={Deardad} />
+            <Route exact path="/blogs/dearrachel" component={Dearrachel} />
+            <Route exact path="/blogs/dearfriends" component={Dearfriends} />
+            <Route exact path="/blogs/fear" component={Fear} />
+            <Route exact path="/blogs/icantdoit" component={ICDI} />
+            <Route exact path="/blogs/life" component={Life} />
+            <Route exact path="/blogs/myfavwhitesneaker" component={MFWS} />
+            <Route exact path="/blogs/selflove" component={SLove} />
+            <Route exact path="/blogs/doessizedefinepoewer" component={Size} />
+            <Route exact path="/blogs/thehappinessmantra" component={THM} />
+            <Route exact path="/blogs/thequarantinemantra" component={TQM} />
+            <Route exact path="/blogs/choices" component={Choices} />
+            <Route exact path="/blogs/turnright" component={Tright} />
             <Route exact path="/subscribe" component={Subscribe} />
             <Redirect from="/*" to="/home" />
           </Switch>

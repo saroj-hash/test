@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom"
 import Footercomp from "./footercomp"
 import Blogs from "./blogs"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -114,7 +115,7 @@ export default class Comp2 extends React.Component {
         if (this.state.icantdoitcomp) return <Icantdoitcomp />
         return <Fragment>
 
-            
+
             <div className="offset-md-2 col-md-8 offset-md-2">
                 {
                     this.state.showMenu ?
@@ -132,7 +133,7 @@ export default class Comp2 extends React.Component {
                                 </Typography>
 
                                 <br />
-                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} >
+                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} component={Link} to="/blogs/thisshalltoopass" >
                                     <h5>
                                         <BBadge pill variant="dark">
                                             This shall too pass
@@ -140,7 +141,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} >
+                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} component={Link} to="/blogs/autumn">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Autumn
@@ -148,7 +149,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })} component={Link} to="/blogs/deardad" >
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Dear Dad,
@@ -156,7 +157,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })} component={Link} to="/blogs/dearrachel">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Dear Rachel,
@@ -164,7 +165,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })} component={Link} to="/blogs/dearfriends">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Dear "Friends"
@@ -172,14 +173,14 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ fearcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ fearcomp: true })} component={Link} to="/blogs/fear">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Fear
                                     </BBadge>
                                     </h5>
                                 </Button>
-                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })} component={Link} to="/blogs/thehappinessmantra">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             The Happiness Mantra
@@ -187,7 +188,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ lifecomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ lifecomp: true })} component={Link} to="/blogs/life">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             LIFE
@@ -195,7 +196,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })} component={Link} to="/blogs/myfavwhitesneaker">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             My Favorite white sneaker
@@ -203,7 +204,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })} component={Link} to="/blogs/thequarantinemantra">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             The Quarantine Mantra
@@ -211,7 +212,7 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })} component={Link} to="/blogs/selflove">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Self Love
@@ -219,15 +220,15 @@ export default class Comp2 extends React.Component {
                                     </h5>
                                 </Button>
 
-                                <Button size="large">
+                                <Button size="large" onClick={() => this.setState({ sizecomp: true })} component={Link} to="/blogs/doessizedefinepoewer">
                                     <h5>
-                                        <BBadge pill variant="dark" onClick={() => this.setState({ sizecomp: true })}>
+                                        <BBadge pill variant="dark" >
                                             Does size defines power?
                                     </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ choicescomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ choicescomp: true })} component={Link} to="/blogs/choices">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             Choices
@@ -237,13 +238,13 @@ export default class Comp2 extends React.Component {
 
                                 <Button size="large">
                                     <h5>
-                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })}>
+                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })} component={Link} to="/blogs/turnright">
                                             Turn Right
                                      </BBadge>
                                     </h5>
                                 </Button>
 
-                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })}>
+                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })} component={Link} to="/blogs/icantdoit">
                                     <h5>
                                         <BBadge pill variant="dark">
                                             I can't do it
@@ -255,9 +256,9 @@ export default class Comp2 extends React.Component {
                         </Card>
                         :
                         <div />
-                        
+
                 }
-                <br/>
+                <br />
                 <Card style={this.state.root} className={this.state.contentCol}>
                     <CardActionArea>
                         <CardContent>
@@ -285,9 +286,12 @@ export default class Comp2 extends React.Component {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })}>
+
+                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })} component={Link} to="/blogs">
                             Back
-                                </Button>
+                        </Button>
+
+
                         <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
                             Comment
                             </Button>
@@ -310,9 +314,9 @@ export default class Comp2 extends React.Component {
                 }
 
             </div>
-            
-            <div style={{width:"100%"}}>
-            <Footercomp/>
+
+            <div style={{ width: "100%" }}>
+                <Footercomp />
             </div>
         </Fragment>
     }

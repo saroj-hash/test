@@ -1,4 +1,9 @@
+
+
+
+import { Link } from "react-router-dom"
 import React, { Fragment } from "react"
+import Footercomp from "./footercomp"
 import Blogs from "./blogs"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/TabContainer"
@@ -10,6 +15,9 @@ import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import BootstrapButton from "react-bootstrap/Button"
+// import Continueblog1 from "./comp1"
+import Form from "react-bootstrap/Form"
 import Comment from "./comment"
 import IconButton from "@material-ui/core/IconButton"
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -109,185 +117,190 @@ export default class Comp2 extends React.Component {
         if (this.state.turnrightcomp) return <Turnrightcomp />
         if (this.state.icantdoitcomp) return <Icantdoitcomp />
         return <Fragment>
-            <div className="offset-md-2 col-md-8 offset-2">
-                
-                    {
-                        this.state.showMenu ?
-                            <Card className="col-md-12">
-                                <CardContent>
-                                    <IconButton className="float-right" onClick={this.handleClose} >
-                                        <BBadge pill variant="dark">
-                                            <CancelPresentationIcon />
-                                        </BBadge>
-                                    </IconButton>
-                                    <br /><br />
 
-                                    <Typography variant="h3" component="h3" className="text-center">
-                                        <BBadge pill variant="dark"> CONTENTS </BBadge>
-                                    </Typography>
 
-                                    <br />
-                                    <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                This shall too pass
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ autumncomp: true })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Autumn
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ deardadcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Dad,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Rachel,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear "Friends"
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ fearcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Fear
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                    <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Happiness Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ lifecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                LIFE
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                My Favorite white sneaker
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Quarantine Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ selflovecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Self Love
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ sizecomp: true })}>
-                                                Does size defines power?
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ choicescomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Choices
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })}>
-                                                Turn Right
-                                     </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                I can't do it
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                </CardContent>
-                                <br />
-                            </Card> :
-                            <div />
-                    }<br/>
-                    <Card style={this.state.root} className={this.state.contentCol}>
-                        <CardActionArea>
+            <div className="offset-md-2 col-md-8 offset-md-2">
+                {
+                    this.state.showMenu ?
+                        <Card className="col-md-12">
                             <CardContent>
-                                <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <IconButton className="float-right" onClick={this.handleClose} >
                                     <BBadge pill variant="dark">
-                                        <MenuOpenIcon />
+                                        <CancelPresentationIcon />
                                     </BBadge>
-                                </IconButton><br />
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Size doesn't define power
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    COVID-19, such a tiny creature, we can't even see it. It is changing the world. This virus has proved that size doesn't matter at all. It has emerged to be powerful even without a single weapon. People with immense influence like Modi JI, Vladimir Putin, Donald Trump, Angela Markel, are on a verge of losing the war against this creature but for the first time all nations together against a common enemy. Let's forget about Xi Jinping for the time being.
-                                    Last few decades our life has become fast, we have forgotten the pause button. We have stopped giving a damn about other things around us, our planet, animals. All we did care about was humans as if we are the only creatures in an ecosystem. This virus is teaching us lessons and is going to bring changes to our lifestyle. It is teaching us survivability. We have started to live with whatever resources we are left with.
-                                    No matter whatever we achieve, whomever we conquer we can't defeat nature. Once nature hits the saturation point of its exploitation it will find a way of letting us down. We, humans, possess the ability to win all most all battles but not the battle against certain things like nature, time, death. Time has come to stop these inhuman activities against nature. Stop killing of animals for our benefits, stop trading of their body parts like elephant ivory and bones, rhino horns, turtle shells, helmeted hornbill, ungulate horns. We should reduce meat consumption, animals we slaughter have families too. Reducing fish consumption can minimize coral reef destruction. We should not try to control them and use for our entertainment purpose.
-                                    Now the climate is reviving, countries are experiencing temporary falls in carbon dioxide, nitrogen dioxide and dozens of other harmful gases. This reduction is helping nature as well as human beings reducing the risk o heart attack, asthma, and other lung diseases. Less human and vehicle movement is calming the planet.
-                                    Let nature breathe some fresh air and heal. After this pandemic is over or under control we are gonna see a new world let's not make it hard for nature.
-                        </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={() => this.setState({ goback: true })}>
-                                Back
-                    </Button>
-                            <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
-                                Comment
-                    </Button>
-                            <IconButton onClick={this.handleLike}>
-                                <BBadge pill variant={this.state.color}>
+                                </IconButton>
+                                <br /><br />
 
-                                    <Badge badgeContent={this.state.badgeContent} color="primary">
-                                        <FavoriteBorderIcon />
-                                    </Badge>
+                                <Typography variant="h3" component="h3" className="text-center">
+                                    <BBadge pill variant="dark"> CONTENTS </BBadge>
+                                </Typography>
+
+                                <br />
+                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} component={Link} to="/blogs/thisshalltoopass" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            This shall too pass
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} component={Link} to="/blogs/autumn">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Autumn
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })} component={Link} to="/blogs/deardad" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Dad,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })} component={Link} to="/blogs/dearrachel">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Rachel,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                                
+                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })} component={Link} to="/blogs/dearfriends">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear "Friends"
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ fearcomp: true })} component={Link} to="/blogs/fear">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Fear
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })} component={Link} to="/blogs/thehappinessmantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Happiness Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ lifecomp: true })} component={Link} to="/blogs/life">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            LIFE
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })} component={Link} to="/blogs/myfavwhitesneaker">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            My Favorite white sneaker
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })} component={Link} to="/blogs/thequarantinemantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Quarantine Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })} component={Link} to="/blogs/selflove">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Self Love
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ sizecomp: true })} component={Link} to="/blogs/doessizedefinepoewer">
+                                    <h5>
+                                        <BBadge pill variant="dark" >
+                                            Does size defines power?
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ choicescomp: true })} component={Link} to="/blogs/choices">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Choices
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large">
+                                    <h5>
+                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })} component={Link} to="/blogs/turnright">
+                                            Turn Right
+                                     </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })} component={Link} to="/blogs/icantdoit">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            I can't do it
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                            </CardContent>
+                            <br />
+                        </Card>
+                        :
+                        <div />
+
+                }
+                <br />
+                <Card style={this.state.root} className={this.state.contentCol}>
+                    <CardActionArea>
+                        <CardContent>
+                            <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <BBadge pill variant="dark">
+                                    <MenuOpenIcon />
                                 </BBadge>
                             </IconButton>
-                        </CardActions>
-                    </Card>
-                
+                            <br />
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Size doesn't define power
+                        </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                COVID-19, such a tiny creature, we can't even see it. It is changing the world. This virus has proved that size doesn't matter at all. It has emerged to be powerful even without a single weapon. People with immense influence like Modi JI, Vladimir Putin, Donald Trump, Angela Markel, are on a verge of losing the war against this creature but for the first time all nations together against a common enemy. Let's forget about Xi Jinping for the time being.
+                                Last few decades our life has become fast, we have forgotten the pause button. We have stopped giving a damn about other things around us, our planet, animals. All we did care about was humans as if we are the only creatures in an ecosystem. This virus is teaching us lessons and is going to bring changes to our lifestyle. It is teaching us survivability. We have started to live with whatever resources we are left with.
+                                No matter whatever we achieve, whomever we conquer we can't defeat nature. Once nature hits the saturation point of its exploitation it will find a way of letting us down. We, humans, possess the ability to win all most all battles but not the battle against certain things like nature, time, death. Time has come to stop these inhuman activities against nature. Stop killing of animals for our benefits, stop trading of their body parts like elephant ivory and bones, rhino horns, turtle shells, helmeted hornbill, ungulate horns. We should reduce meat consumption, animals we slaughter have families too. Reducing fish consumption can minimize coral reef destruction. We should not try to control them and use for our entertainment purpose.
+                                Now the climate is reviving, countries are experiencing temporary falls in carbon dioxide, nitrogen dioxide and dozens of other harmful gases. This reduction is helping nature as well as human beings reducing the risk o heart attack, asthma, and other lung diseases. Less human and vehicle movement is calming the planet.
+                                Let nature breathe some fresh air and heal. After this pandemic is over or under control we are gonna see a new world let's not make it hard for nature.
+                        </Typography>
+                            <br />
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })} component={Link} to="/blogs">
+                            Back
+                                                                                                                                                                                                                                            </Button>
+                        <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
+                            Comment
+                                                                                                                                                                                                                                        </Button>
+                        <IconButton onClick={this.handleLike}>
+                            <BBadge pill variant={this.state.color}>
+
+                                <Badge badgeContent={this.state.badgeContent} color="primary">
+                                    <FavoriteBorderIcon />
+                                </Badge>
+                            </BBadge>
+                        </IconButton>
+                    </CardActions>
+                </Card>
 
                 <br /><br />
                 {
@@ -295,6 +308,11 @@ export default class Comp2 extends React.Component {
                         <Comment /> :
                         <div></div>
                 }
+
+            </div>
+
+            <div style={{ width: "100%" }}>
+                <Footercomp />
             </div>
         </Fragment>
     }

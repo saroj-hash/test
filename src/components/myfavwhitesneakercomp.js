@@ -1,4 +1,7 @@
+
+import { Link } from "react-router-dom"
 import React, { Fragment } from "react"
+import Footercomp from "./footercomp"
 import Blogs from "./blogs"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Container from "react-bootstrap/TabContainer"
@@ -10,6 +13,9 @@ import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import BootstrapButton from "react-bootstrap/Button"
+// import Continueblog1 from "./comp1"
+import Form from "react-bootstrap/Form"
 import Comment from "./comment"
 import IconButton from "@material-ui/core/IconButton"
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -109,189 +115,194 @@ export default class Comp2 extends React.Component {
         if (this.state.turnrightcomp) return <Turnrightcomp />
         if (this.state.icantdoitcomp) return <Icantdoitcomp />
         return <Fragment>
-            <div className="offset-md-2 col-md-8 offset-2">
-              
-                    {
-                        this.state.showMenu ?
-                            <Card className="col-md-12">
-                                <CardContent>
-                                    <IconButton className="float-right" onClick={this.handleClose} >
-                                        <BBadge pill variant="dark">
-                                            <CancelPresentationIcon />
-                                        </BBadge>
-                                    </IconButton>
-                                    <br /><br />
 
-                                    <Typography variant="h3" component="h3" className="text-center">
-                                        <BBadge pill variant="dark"> CONTENTS </BBadge>
-                                    </Typography>
 
-                                    <br />
-                                    <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                This shall too pass
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ autumncomp: true })} >
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Autumn
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ deardadcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Dad,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear Rachel,
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Dear "Friends"
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ fearcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Fear
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                    <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Happiness Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ lifecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                LIFE
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                My Favorite white sneaker
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                The Quarantine Mantra
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ selflovecomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Self Love
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ sizecomp: true })}>
-                                                Does size defines power?
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ choicescomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                Choices
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large">
-                                        <h5>
-                                            <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })}>
-                                                Turn Right
-                                     </BBadge>
-                                        </h5>
-                                    </Button>
-
-                                    <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })}>
-                                        <h5>
-                                            <BBadge pill variant="dark">
-                                                I can't do it
-                                    </BBadge>
-                                        </h5>
-                                    </Button>
-                                </CardContent>
-                                <br />
-                            </Card> :
-                            <div />
-                    }
-                    <br />
-                    <Card style={this.state.root} className={this.state.contentCol}>
-                        <CardActionArea>
+            <div className="offset-md-2 col-md-8 offset-md-2">
+                {
+                    this.state.showMenu ?
+                        <Card className="col-md-12">
                             <CardContent>
-                                <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <IconButton className="float-right" onClick={this.handleClose} >
                                     <BBadge pill variant="dark">
-                                        <MenuOpenIcon />
+                                        <CancelPresentationIcon />
                                     </BBadge>
-                                </IconButton><br />
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    My favorite white sneaker
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    Have you ever imagined how important shoes are? Shoes were as a staple of my outfit. Especially, my white sneakers, whatever clothes I put on my sneakers never disappoint me. This time it added life lessons to my life.
-                                    I bought a new white sneaker, still remember the day when I wore it for the first time, scratched denim jeans, a black t-shirt, and the new sneaker. It looked good but it was not so comfortable to walk. For the first time, I was disappointed with Adidas. But then I continued with my work. Every day I get ready I think of wearing some other shoes but I end up wearing the new one. Days passed, it started treating me well, I was more comfortable with it. And after a point, it turned out to be the most comfortable pair of sneakers. The start might not be easy, but gradually when we start walking it will be. All we need to do is put on a kick-ass outfit and bust out favorite sneakers and start walking.
-                                    Being humble is one of the greatest qualities a person can have and his/her character is far more important than what his/her money can buy. Owing a pair of Nike Air VaporMax 360 or a pair of Air Jordan 4 Retro SE or an ISPA Air Max 720 doesn't make you any better than a man with a Vans Old Skool or a Converse Chuck Taylor All Star Slip. Irrespective of the price all of them serve the same purpose. So be humble like them.
-                                    Some sneakers aren't so good to see, sometimes I wonder why people buy these. But then LiteRide Pacer from Crocs proved me wrong. Though it's look was not so eye-catching but it was very versatile and comfortable. So prejudging the worth of something by its outward appearance is wrong.
-                                    Sneakers are so sedulous, neither they give up easily nor they betray their owners. No matter how much the owner may weigh they serve till their end. They never complain about this.
-                                    Apart from these things shoes do teach more like never change your partner, stay together. They travel with us where ever we go. No matter how dirty shoes is, once cleaned looks good again.
-                                    Dream chasers wear sneakers. Love them, put on your favorite one and chase your dream.
+                                </IconButton>
+                                <br /><br />
 
-                        </Typography>
+                                <Typography variant="h3" component="h3" className="text-center">
+                                    <BBadge pill variant="dark"> CONTENTS </BBadge>
+                                </Typography>
+
+                                <br />
+                                <Button size="large" onClick={() => this.setState({ thisshalltoopasscomp: !this.state.thisshalltoopasscomp })} component={Link} to="/blogs/thisshalltoopass" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            This shall too pass
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ autumncomp: true })} component={Link} to="/blogs/autumn">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Autumn
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ deardadcomp: true })} component={Link} to="/blogs/deardad" >
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Dad,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearrachelcomp: true })} component={Link} to="/blogs/dearrachel">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear Rachel,
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ dearfriendscomp: true })} component={Link} to="/blogs/dearfriends">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Dear "Friends"
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ fearcomp: true })} component={Link} to="/blogs/fear">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Fear
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+                                <Button size="large" onClick={() => this.setState({ thehappinessmatracomp: true })}  component={Link} to="/blogs/thehappinessmantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Happiness Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ lifecomp: true })} component={Link} to="/blogs/life">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            LIFE
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ myfavwhitesneakercomp: true })} component={Link} to="/blogs/myfavwhitesneaker">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            My Favorite white sneaker
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ thequarantinemantracomp: true })} component={Link} to="/blogs/thequarantinemantra">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            The Quarantine Mantra
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ selflovecomp: true })} component={Link} to="/blogs/selflove">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Self Love
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ sizecomp: true })}component={Link} to="/blogs/doessizedefinepoewer">
+                                    <h5>
+                                        <BBadge pill variant="dark" >
+                                            Does size defines power?
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ choicescomp: true })} component={Link} to="/blogs/choices">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            Choices
+                                    </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large">
+                                    <h5>
+                                        <BBadge pill variant="dark" onClick={() => this.setState({ turnrightcomp: true })} component={Link} to="/blogs/turnright">
+                                            Turn Right
+                                     </BBadge>
+                                    </h5>
+                                </Button>
+
+                                <Button size="large" onClick={() => this.setState({ icantdoitcomp: true })} component={Link} to="/blogs/icantdoit">
+                                    <h5>
+                                        <BBadge pill variant="dark">
+                                            I can't do it
+                                    </BBadge>
+                                    </h5>
+                                </Button>
                             </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={() => this.setState({ goback: true })}>
-                                Back
-                    </Button>
-                            <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
-                                Comment
-                    </Button>
-                            <IconButton onClick={this.handleLike}>
-                                <BBadge pill variant={this.state.color}>
+                            <br />
+                        </Card>
+                        :
+                        <div />
 
-                                    <Badge badgeContent={this.state.badgeContent} color="primary">
-                                        <FavoriteBorderIcon />
-                                    </Badge>
+                }
+                <br />
+                <Card style={this.state.root} className={this.state.contentCol}>
+                    <CardActionArea>
+                        <CardContent>
+                            <IconButton hidden={this.state.hidden} onClick={this.handleMenu}>
+                                <BBadge pill variant="dark">
+                                    <MenuOpenIcon />
                                 </BBadge>
                             </IconButton>
-                        </CardActions>
-                    </Card>
-              
+                            <br />
+                            <Typography gutterBottom variant="h5" component="h2">
+                                My favorite white sneaker
+                        </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                Have you ever imagined how important shoes are? Shoes were as a staple of my outfit. Especially, my white sneakers, whatever clothes I put on my sneakers never disappoint me. This time it added life lessons to my life.
+                                I bought a new white sneaker, still remember the day when I wore it for the first time, scratched denim jeans, a black t-shirt, and the new sneaker. It looked good but it was not so comfortable to walk. For the first time, I was disappointed with Adidas. But then I continued with my work. Every day I get ready I think of wearing some other shoes but I end up wearing the new one. Days passed, it started treating me well, I was more comfortable with it. And after a point, it turned out to be the most comfortable pair of sneakers. The start might not be easy, but gradually when we start walking it will be. All we need to do is put on a kick-ass outfit and bust out favorite sneakers and start walking.
+                                Being humble is one of the greatest qualities a person can have and his/her character is far more important than what his/her money can buy. Owing a pair of Nike Air VaporMax 360 or a pair of Air Jordan 4 Retro SE or an ISPA Air Max 720 doesn't make you any better than a man with a Vans Old Skool or a Converse Chuck Taylor All Star Slip. Irrespective of the price all of them serve the same purpose. So be humble like them.
+                                Some sneakers aren't so good to see, sometimes I wonder why people buy these. But then LiteRide Pacer from Crocs proved me wrong. Though it's look was not so eye-catching but it was very versatile and comfortable. So prejudging the worth of something by its outward appearance is wrong.
+                                Sneakers are so sedulous, neither they give up easily nor they betray their owners. No matter how much the owner may weigh they serve till their end. They never complain about this.
+                                Apart from these things shoes do teach more like never change your partner, stay together. They travel with us where ever we go. No matter how dirty shoes is, once cleaned looks good again.
+                                Dream chasers wear sneakers. Love them, put on your favorite one and chase your dream.
+
+                        </Typography>
+
+                            <br />
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary" onClick={() => this.setState({ goback: true })} component={Link} to="/blogs">
+                            Back
+                                                                                                                                                                                                                    </Button>
+                        <Button size="small" color="primary" onClick={() => this.setState({ viewComment: !this.state.viewComment })}>
+                            Comment
+                                                                                                                                                                                                                </Button>
+                        <IconButton onClick={this.handleLike}>
+                            <BBadge pill variant={this.state.color}>
+
+                                <Badge badgeContent={this.state.badgeContent} color="primary">
+                                    <FavoriteBorderIcon />
+                                </Badge>
+                            </BBadge>
+                        </IconButton>
+                    </CardActions>
+                </Card>
 
                 <br /><br />
                 {
@@ -299,6 +310,11 @@ export default class Comp2 extends React.Component {
                         <Comment /> :
                         <div></div>
                 }
+
+            </div>
+
+            <div style={{ width: "100%" }}>
+                <Footercomp />
             </div>
         </Fragment>
     }
