@@ -1,80 +1,23 @@
 import Tooltip from "@material-ui/core/Tooltip"
-import ScrollUpButton from "react-scroll-up-button"
-import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom"
+import {Link} from "react-router-dom"
 import React, { Component, Fragment } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
-import CardHeader from "@material-ui/core/CardHeader"
-import CardMedia from "@material-ui/core/CardMedia"
 import Button from "@material-ui/core/Button"
-import Container from "react-bootstrap/TabContainer"
 import IconButton from '@material-ui/core/IconButton';
 import ArrowDropUpRoundedIcon from '@material-ui/icons/ArrowDropUpRounded';
 import Row from "react-bootstrap/Row"
 import Badge from "react-bootstrap/Badge"
 import Typography from "@material-ui/core/Typography"
-import Thisshalltoopasscomp from "./thisshalltoopasscomp"
-import Autumncomp from "./autumncomp"
-import Deardadcomp from "./deardadcomp"
-import Dearrachelcomp from "./dearrachelcomp"
-import Dearfriendscomp from "./dearfriendscomp"
-import Fearcomp from "./fearcomp"
-import Thehappinessmantracomp from "./thehappinessmatracomp"
-import Lifecomp from "./lifecomp"
-import Myfavoritewhitesneakercomp from "./myfavwhitesneakercomp"
-import Thequarantinemantracomp from "./thequarantinemantracomp"
-import Selflovecomp from "./selflovecomp"
-import Sizecomp from "./sizecomp"
-import Choicescomp from "./choicescomp"
-import Turnrightcomp from "./turnrightcomp"
-import Icantdoitcomp from "./icantdoitcomp"
-import Home from "./home"
 import Footercomp from "./footercomp"
 export default class Blogs extends Component {
-    state = {
-        continueblog1: false,
-        continueblog2: false,
-        continueblog3: false,
-        continueblog4: false,
-        continueblog5: false,
-        continueblog6: false,
-        continueblog7: false,
-        continueblog8: false,
-        continueblog9: false,
-        continueblog10: false,
-        continueblog11: false,
-        continueblog12: false,
-        continueblog13: false,
-        continueblog14: false,
-        continueblog15: false,
-        home: false
-    }
     render() {
-        if (this.state.continueblog2) return <Autumncomp />
-        if (this.state.continueblog1) return <Thisshalltoopasscomp />
-        if (this.state.continueblog3) return <Deardadcomp />
-        if (this.state.continueblog4) return <Dearrachelcomp />
-        if (this.state.continueblog5) return <Dearfriendscomp />
-        if (this.state.continueblog6) return <Fearcomp />
-        if (this.state.continueblog7) return <Thehappinessmantracomp />
-        if (this.state.continueblog8) return <Lifecomp />
-        if (this.state.continueblog9) return <Myfavoritewhitesneakercomp />
-        if (this.state.continueblog10) return <Thequarantinemantracomp />
-        if (this.state.continueblog11) return <Selflovecomp />
-        if (this.state.continueblog12) return <Sizecomp />
-        if (this.state.continueblog13) return <Choicescomp />
-        if (this.state.continueblog14) return <Turnrightcomp />
-        if (this.state.continueblog15) return <Icantdoitcomp />
-        if (this.state.home) return <Home />
         return <Fragment>
 
             <div className="container-fluid">
-
-
-
                 <Tooltip title="Go back to home page" placement="bottom" arrow>
                     <IconButton aria-label="down" className="btn btn-block" onClick={() => this.setState({ home: true })} component={Link} to="/home">
                         <Badge pill variant="primary">
@@ -82,9 +25,6 @@ export default class Blogs extends Component {
                         </Badge>
                     </IconButton>
                 </Tooltip>
-
-
-
                 <Row>
                     <div className=" col-md-3"  >
                         <Card>
@@ -92,7 +32,7 @@ export default class Blogs extends Component {
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         This shall too pass
-                                </Typography>
+                                    </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         Yes! This shall too pass. So what, if you cry your eyes out, this shall too pass. So what, if things will never be the same, this shall too pass. So what, if you get crippling depression,...
                                     </Typography>
@@ -100,7 +40,7 @@ export default class Blogs extends Component {
                             </CardActionArea>
                             <CardActions>
 
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog1: true })} component={Link} to="/blogs/thisshalltoopass">
+                                <Button size="small" color="primary" component={Link} to="/blogs/thisshalltoopass">
                                     Continue Reading...
                                 </Button>
 
@@ -120,7 +60,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog2: true })} component={Link} to="/blogs/autumn">
+                                <Button size="small" color="primary" component={Link} to="/blogs/autumn">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -139,7 +79,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog3: true })} component={Link} to="/blogs/deardad">
+                                <Button size="small" color="primary" to="/blogs/deardad">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -158,7 +98,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog4: true })} component={Link} to="/blogs/dearrachel">
+                                <Button size="small" color="primary" component={Link} to="/blogs/dearrachel">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -180,7 +120,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog5: true })} component={Link} to="/blogs/dearfriends">
+                                <Button size="small" color="primary" component={Link} to="/blogs/dearfriends">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -199,7 +139,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog6: true })} component={Link} to="/blogs/fear">
+                                <Button size="small" color="primary" component={Link} to="/blogs/fear">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -220,7 +160,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog7: true })} component={Link} to="/blogs/thehappinessmantra">
+                                <Button size="small" color="primary" component={Link} to="/blogs/thehappinessmantra">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -239,7 +179,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog8: true })} component={Link} to="/blogs/life">
+                                <Button size="small" color="primary"  component={Link} to="/blogs/life">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -261,7 +201,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog9: true })} component={Link} to="/blogs/myfavwhitesneaker">
+                                <Button size="small" color="primary" component={Link} to="/blogs/myfavwhitesneaker">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -280,7 +220,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog10: true })} component={Link} to="/blogs/thequarantinemantra" >
+                                <Button size="small" color="primary" component={Link} to="/blogs/thequarantinemantra" >
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -299,7 +239,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog11: true })} component={Link} to="/blogs/selflove">
+                                <Button size="small" color="primary" component={Link} to="/blogs/selflove">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -318,7 +258,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog12: true })} component={Link} to="/blogs/doessizedefinepoewer">
+                                <Button size="small" color="primary" component={Link} to="/blogs/doessizedefinepoewer">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -340,7 +280,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog13: true })} component={Link} to="/blogs/choices">
+                                <Button size="small" color="primary" component={Link} to="/blogs/choices">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -359,7 +299,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog14: true })}  component={Link} to="/blogs/turnright">
+                                <Button size="small" color="primary"  component={Link} to="/blogs/turnright">
                                     Continue Reading...
                             </Button>
                             </CardActions>
@@ -378,7 +318,7 @@ export default class Blogs extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => this.setState({ continueblog15: true })} component={Link} to="/blogs/icantdoit">
+                                <Button size="small" color="primary" component={Link} to="/blogs/icantdoit">
                                     Continue Reading...
                             </Button>
                             </CardActions>

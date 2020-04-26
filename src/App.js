@@ -1,11 +1,9 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import Row from "react-bootstrap/Row"
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Container from "react-bootstrap/TabContainer"
-import Badge from 'react-bootstrap/Badge'
 import React, { Component, Fragment } from "react"
 import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom"
+import "bootstrap/dist/css/bootstrap.min.css"
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Badge from 'react-bootstrap/Badge'
 import Typography from "@material-ui/core/Typography"
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -13,6 +11,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import Home from "./components/home"
 import Blogs from "./components/blogs"
 import Subscribe from "./components/subscribe"
+import ContactUs from "./components/contactus"
+import AboutUs from "./components/aboutus"
 import Thisshalltoopass from "./components/thisshalltoopasscomp"
 import Autumn from "./components/autumncomp"
 import Choices from "./components/choicescomp"
@@ -27,7 +27,8 @@ import SLove from "./components/selflovecomp"
 import Size from "./components/sizecomp"
 import THM from "./components/thehappinessmatracomp"
 import TQM from "./components/thequarantinemantracomp"
-import Tright from "./components/turnrightcomp"
+import TurnRight from "./components/turnrightcomp"
+import Menu from "./components/menucomp"
 export default class App extends Component {
   state={
       style1 : {color:"orange"},
@@ -132,12 +133,12 @@ export default class App extends Component {
               <Nav>
                 <div className="row">
                   &nbsp;&nbsp;
-                <Link className="nav-link">
+                <Link className="nav-link" >
                   <Badge pill variant="light" style={this.state.style5} onMouseEnter={this.changeStyle9} onMouseLeave={this.changeStyle10}><InstagramIcon /></Badge>
                 </Link>&nbsp;&nbsp;
-                <Link className="nav-link">
+                <a className="nav-link" href="https://www.facebook.com/">
                   <Badge pill variant="light" style={this.state.style6} onMouseEnter={this.changeStyle11} onMouseLeave={this.changeStyle12}><FacebookIcon /></Badge>
-                </Link>&nbsp;&nbsp;
+                </a>&nbsp;&nbsp;
                 <Link className="nav-link">
                   <Badge pill variant="light" style={this.state.style7} onMouseEnter={this.changeStyle13} onMouseLeave={this.changeStyle14}><TwitterIcon /></Badge>
                 </Link>
@@ -163,8 +164,11 @@ export default class App extends Component {
             <Route exact path="/blogs/thehappinessmantra" component={THM} />
             <Route exact path="/blogs/thequarantinemantra" component={TQM} />
             <Route exact path="/blogs/choices" component={Choices} />
-            <Route exact path="/blogs/turnright" component={Tright} />
+            <Route exact path="/blogs/turnright" component={TurnRight} />
             <Route exact path="/subscribe" component={Subscribe} />
+            <Route exact path="/contactus" component={ContactUs}/>
+            <Route exact path="/aboutus" component={AboutUs}/>
+            <Route exact path="/menu" component={Menu}/>
             <Redirect from="/*" to="/home" />
           </Switch>
         </BrowserRouter>

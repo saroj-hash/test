@@ -1,28 +1,16 @@
+import React, { Fragment, Component } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowDropDownRoundedIcon from '@material-ui/icons/ArrowDropDownRounded';
 import Tooltip from '@material-ui/core/Tooltip';
 import Badge from 'react-bootstrap/Badge'
-import Blogs from "./blogs"
 import Footercomp from "./footercomp"
-import Row from "react-bootstrap/Row"
-import NotificationsActiveRoundedIcon from '@material-ui/icons/NotificationsActiveRounded';
-import FormControl from "@material-ui/core/FormControl"
-import FormHelperText from "@material-ui/core/FormHelperText"
-import SubscriptionsRoundedIcon from '@material-ui/icons/SubscriptionsRounded';
-import TextField from "@material-ui/core/TextField"
-import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom"
-import React, { Fragment, Component } from "react"
+import {Link} from "react-router-dom"
 import Container from "react-bootstrap/TabContainer"
-import Photo1 from "../assets/photo1.jpg"
-import Photo2 from "../assets/photo2.jpg"
-import Photo3 from "../assets/photo3.jpg"
-import Photo4 from "../assets/photo4.jpg"
+import Wolf8 from "../assets/assets/wolf8.jpg"
 export default class Home extends Component {
     state = {
-        blogs: false,
         index: 0,
         Quotes: [
             {
@@ -71,7 +59,6 @@ export default class Home extends Component {
     }
 
     render() {
-        if (this.state.blogs) return <Blogs />
         return <Fragment>
             <Container style={{ width: "100%", height: "100%" }}>
                 <div style={{ width: "100%", height: "100%", backgroundColor: "black" }}>
@@ -87,7 +74,7 @@ export default class Home extends Component {
                     </Typography>
                    </div>
                    <br/><br/>
-                   <img src={Photo2} className="img img-fluid"/> 
+                   <img src={Wolf8} className="img img-fluid"/> 
                    <br/><br/><br/><br/>
                     <div className="offset-md-2 col-md-8 offset-md-2">
                             <Typography variant="h5" component="h5" style={{color:"orange", fontFamily: "Berlin Sans FB"}} className="text-left">
@@ -98,8 +85,8 @@ export default class Home extends Component {
                         </div>
                         <br/><br/>
                     
-                            <Tooltip title="Go directly to blogs" placement="top" arrow>
-                                <IconButton aria-label="down" className="btn btn-block" onClick={() => { this.setState({ blogs: true }) }} component={Link} to="/blogs">
+                            <Tooltip title="Go to blogs" placement="top" arrow>
+                                <IconButton aria-label="down" className="btn btn-block" component={Link} to="/blogs">
                                     <Badge pill variant="danger">
                                         <ArrowDropDownRoundedIcon />
                                     </Badge>

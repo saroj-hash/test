@@ -19,146 +19,340 @@ import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom"
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
-
+import BootstrapButton from "react-bootstrap/Button"
+import CancelIcon from '@material-ui/icons/Cancel'
 export default class Footercomp extends Component {
     state={
-        div1: {border:"1px solid black"},
-        div2: {border:"1px solid black"},
-        div3: {border:"1px solid black"},
-        style3 : {color:"orange"},
-        style4 : {color:"orange"},
-        style5 : {backgroundColor:"orange"},
-        style6 : {backgroundColor:"orange"},
-        style7 : {backgroundColor:"orange"}
+        showmore : false,
+        style1 : {
+          border : "1px solid black"
+        },
+        style11 : {
+          border : "1px solid black"
+        },
+        style2 : {
+          border : "1px solid black"
+        },
+        style21 : {
+          border : "1px solid black"
+        },
+        style22 : {
+          border : "1px solid black"
+        },
+        styleIcon1 : {backgroundColor : "orange"},
+        styleIcon2 : {backgroundColor : "orange"},
+        styleIcon3 : {backgroundColor : "orange"},
+        styleText1 : {color : "orange"},
+        styleText2 : {color : "orange"}
     }
-    
-    styleChange1Div2 = () => {
-        this.setState({
-            div2:{border:"1px solid orange"}
-        })
+    style1Change1 = () => {
+      this.setState({
+        style1 : {
+          border : "1px solid orange"
+        }
+      })
     }
-    styleChange2Div2 = () => {
-        this.setState({
-            div2:{border:"1px solid black"}
-        })
-    }
-    
-    changeStyle5 = () =>{
-        this.setState({
-          style3 : {color:"white"},
-          div1: {border:"1px solid orange"}
 
-        })
-      }
-      changeStyle6 = () => {
-        this.setState({
-          style3 : {color:"orange"},
-          div1: {border:"1px solid black"}
-        })
-      }
-      changeStyle7 = () =>{
-        this.setState({
-          style4 : {color:"white"},
-          div3: {border:"1px solid orange"}
-        })
-      }
-      changeStyle8 = () => {
-        this.setState({
-          style4 : {color:"orange"},
-          div3: {border:"1px solid black"}
-        })
-      }
-      changeStyle9 = () =>{
-        this.setState({
-          style5 : {backgroundColor:"white"}
-        })
-      }
-      changeStyle10 = () => {
-        this.setState({
-          style5 : {backgroundColor:"orange"}
-        })
-      }
-      changeStyle11 = () =>{
-        this.setState({
-          style6 : {backgroundColor:"white"}
-        })
-      }
-      changeStyle12 = () => {
-        this.setState({
-          style6 : {backgroundColor:"orange"}
-        })
-      }
-      changeStyle13 = () =>{
-        this.setState({
-          style7 : {backgroundColor:"white"}
-        })
-      }
-      changeStyle14 = () => {
-        this.setState({
-          style7 : {backgroundColor:"orange"}
-        })
-      }
+    style1Change2 = () => {
+      this.setState({
+        style1 : {
+          border : "1px solid black"
+        }
+      })
+    }
+
+    style11Change1 = () => {
+      this.setState({
+        style11 : {
+          border : "1px solid orange"
+        }
+      })
+    }
+
+    style11Change2 = () => {
+      this.setState({
+        style11 : {
+          border : "1px solid black"
+        }
+      })
+    }
+
+    style21Change1 = () => {
+      this.setState({
+        style21 : {
+          border : "1px solid orange"
+        }
+      })
+    }
+
+    style21Change2 = () => {
+      this.setState({
+        style21 : {
+          border : "1px solid black"
+        }
+      })
+    }
+
+    style22Change1 = () => {
+      this.setState({
+        style22 : {
+          border : "1px solid orange"
+        }
+      })
+    }
+
+    style22Change2 = () => {
+      this.setState({
+        style22 : {
+          border : "1px solid black"
+        }
+      })
+    }
+
+    style2Change1 = () => {
+      this.setState({
+        style2 : {
+          border : "1px solid orange"
+        }
+      })
+    }
+
+    style2Change2 = () => {
+      this.setState({
+        style2 : {
+          border : "1px solid black"
+        }
+      })
+    }
+
+    styleIcon1Change1 = () => {
+      this.setState({
+        styleIcon1 : {backgroundColor : "lavender"}
+      })
+    }
+    styleIcon1Change2 = () => {
+      this.setState({
+        styleIcon1 : {backgroundColor : "orange"}
+      })
+    }
+
+    styleIcon2Change1 = () => {
+      this.setState({
+        styleIcon2 : {backgroundColor : "lavender"}
+      })
+    }
+    styleIcon2Change2 = () => {
+      this.setState({
+        styleIcon2 : {backgroundColor : "orange"}
+      })
+    }
+   
+    styleIcon3Change1 = () => {
+      this.setState({
+        styleIcon3 : {backgroundColor : "lavender"}
+      })
+    }
+    styleIcon3Change2 = () => {
+      this.setState({
+        styleIcon3 : {backgroundColor : "orange"}
+      })
+    }
+
+    styleText1Change1 = () => {
+      this.setState({
+        styleText1 : {color : "lavender"},
+        style21 : {border : "1px solid lavender"}
+      })
+    }
+    styleText1Change2 = () => {
+      this.setState({
+        styleText1 : {color : "orange"},
+        style21 : {border : "1px solid orange"},
+        
+      })
+    }
+
+    styleText2Change1 = () => {
+      this.setState({
+        styleText2 : {color : "lavender"},
+        style22 : {border : "1px solid lavender"}
+      })
+    }
+    styleText2Change2 = () => {
+      this.setState({
+        styleText2 : {color : "orange"},
+        style22 : {border : "1px solid orange"}
+      })
+    }
+    
+
+    handleShowMore = () => {
+      this.setState({
+        showmore : true,
+        style1 : {
+          border : "1px solid black"
+        },
+        style11 : {
+          border : "1px solid black"
+        },
+        style2 : {
+          border : "1px solid black"
+        },
+        style21 : {
+          border : "1px solid black"
+        },
+        style22 : {
+          border : "1px solid black"
+        },
+        styleIcon1 : {backgroundColor : "orange"},
+        styleIcon2 : {backgroundColor : "orange"},
+        styleIcon3 : {backgroundColor : "orange"},
+        styleText1 : {color : "orange"},
+        styleText2 : {color : "orange"}
+      })
+    }
+
+    handleShowless = () => {
+      this.setState({
+        showmore : false,
+        style1 : {
+          border : "1px solid black"
+        },
+        style11 : {
+          border : "1px solid black"
+        },
+        style2 : {
+          border : "1px solid black"
+        },
+        style21 : {
+          border : "1px solid black"
+        },
+        style22 : {
+          border : "1px solid black"
+        },
+        styleIcon1 : {backgroundColor : "orange"},
+        styleIcon2 : {backgroundColor : "orange"},
+        styleIcon3 : {backgroundColor : "orange"},
+        styleText1 : {color : "orange"},
+        styleText2 : {color : "orange"}
+      })
+    }
+
+    
     render() {
         return <Fragment>
             <Container>
-            <BrowserRouter>
-            <Navbar collapseOnSelect expand="lg" sticky="bottom"  style={{width:"100%",backgroundColor:"black",borderTop:"1px solid orange"}}>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{backgroundColor:"orange"}} />
-            <div className="col-md-4" style={this.state.div1} >
-            <br/>
-            <div className="offset-md-3 col-md-6 offset-md-3">
-            <Navbar.Collapse id="responsive-navbar-nav" >
-                    <Link className="nav-link">
-                        <Typography variant="h6" component="h6" className="text-center" style={this.state.style3} onMouseEnter={this.changeStyle5} onMouseLeave={this.changeStyle6}>
-                            About Us
-                        </Typography>
-                    </Link>
-            </Navbar.Collapse>
-            </div>
-            
-           
-            <br/>
-            </div> 
-            <div className="col-md-4" style={this.state.div2} onMouseEnter={this.styleChange1Div2} onMouseLeave={this.styleChange2Div2}>
-            <br/>
-            <div className="offset-md-3 col-md-6 offset-md-3">
-            <Navbar.Brand>
-            <Typography variant="h5" component="h5" style={{color:"orange"}}>
-               Wolfwalker's Journal
-            </Typography>
-            <Row>
-            <Link className="nav-link">
-                <Badge pill variant="light" style={this.state.style5} onMouseEnter={this.changeStyle9} onMouseLeave={this.changeStyle10}><InstagramIcon /></Badge>
-            </Link>&nbsp;&nbsp;
-            <Link className="nav-link">
-                <Badge pill variant="light" style={this.state.style6} onMouseEnter={this.changeStyle11} onMouseLeave={this.changeStyle12}><FacebookIcon /></Badge>
-            </Link>&nbsp;&nbsp;
-            <Link className="nav-link">
-                <Badge pill variant="light" style={this.state.style7} onMouseEnter={this.changeStyle13} onMouseLeave={this.changeStyle14}><TwitterIcon /></Badge>
-            </Link>
-            </Row>
-            </Navbar.Brand>
-            </div>
-            <br/>
-            </div> 
-            <div className="col-md-4" style={this.state.div3}>
-            <br/>
-            <div className="offset-md-3 col-md-6 offset-md-3">
-            <Navbar.Collapse id="responsive-navbar-nav" >
-                    <Link className="nav-link">
-                        <Typography variant="h6" component="h6" className="text-center" style={this.state.style4} onMouseEnter={this.changeStyle7} onMouseLeave={this.changeStyle8}>
-                            Contact us
-                        </Typography>
-                    </Link>
-            </Navbar.Collapse>
-            </div>
-            
-      
-            <br/>
-            </div> 
+            {
+              this.state.showmore === false ? 
+              <div style = {{ backgroundColor : "black", borderTop : "1px solid orange" }} className="col-md-12">
+                <br/><br/>
+                  <div className = "offset-md-4 col-md-4 offset-md-4" style = {this.state.style1} onMouseEnter = {this.style1Change1} onMouseLeave = {this.style1Change2}>
+                    <br/><br/>
+                    <Typography className="text-center" variant = "h3" component="h3" style={{color : "orange"}}>
+                      Wolfwalker's Journal
+                    </Typography>
+                    <Row>
+                    <div className="col-md-4">
+                    <a target="_blank" className="nav-link text-center" href="https://twitter.com/login">
+                      <Badge pill variant="light" style={this.state.styleIcon1} onMouseEnter = {this.styleIcon1Change1} onMouseLeave = {this.styleIcon1Change2}>
+                        <InstagramIcon/>
+                      </Badge>
+                    </a>
+                    </div>
+                    <div className="col-md-4">
+                    <a target="_blank" className="nav-link text-center" href="https://twitter.com/login">
+                      <Badge pill variant="light" style={this.state.styleIcon2} onMouseEnter = {this.styleIcon2Change1} onMouseLeave = {this.styleIcon2Change2}>
+                        <FacebookIcon/>
+                      </Badge>
+                    </a>
+                    </div>
+                    <div className="col-md-4">
+                    <a target="_blank" className="nav-link text-center" href="https://twitter.com/login">
+                      <Badge pill variant="light" style={this.state.styleIcon3} onMouseEnter = {this.styleIcon3Change1} onMouseLeave = {this.styleIcon3Change2}>
+                        <TwitterIcon/>
+                      </Badge>
+                    </a>
+                    </div>
+                    </Row>
+                    <br/>
+                    <Typography className="text-center">
+                      <BootstrapButton variant="outline-warning" onClick = {this.handleShowMore}>
+                        SHOW MORE
+                      </BootstrapButton>
+                    </Typography>
+                    <br/><br/>
+                </div>
+                <br/><br/>
+              </div>:
+              <div style = {{ backgroundColor : "black", borderTop : "1px solid orange" }} className="col-md-12">
+                <br/><br/>
+                <Row>
+                <div className = "col-md-4" style = {this.state.style11} onMouseEnter = {this.style11Change1} onMouseLeave = {this.style11Change2}>
+                    <br/><br/>
+                    <Typography className="text-center" variant = "h3" component="h3" style={{color : "orange"}}>
+                      Wolfwalker's Journal
+                    </Typography>
+                    <Row>
+                    <div className="col-md-4" >
+                    <a target="_blank" className="nav-link text-center" href="https://twitter.com/login">
+                      <Badge pill variant="light" style={this.state.styleIcon1} onMouseEnter = {this.styleIcon1Change1} onMouseLeave = {this.styleIcon1Change2}>
+                        <InstagramIcon/>
+                      </Badge>
+                    </a>
+                    </div>
+                    <div className="col-md-4">
+                    <a target="_blank" className="nav-link text-center" href="https://twitter.com/login">
+                      <Badge pill variant="light" style={this.state.styleIcon2} onMouseEnter = {this.styleIcon2Change1} onMouseLeave = {this.styleIcon2Change2}>
+                        <FacebookIcon/>
+                      </Badge>
+                    </a>
+                    </div>
+                    <div className="col-md-4" >
+                    <a target="_blank" className="nav-link text-center" href="https://twitter.com/login">
+                      <Badge pill variant="light" style={this.state.styleIcon3} onMouseEnter = {this.styleIcon3Change1} onMouseLeave = {this.styleIcon3Change2}>
+                        <TwitterIcon/>
+                      </Badge>
+                    </a>
+                    </div>
+                    </Row>
+                    <br/>
+                    <Typography className="text-center">
+                      <BootstrapButton variant="outline-warning" onClick = {this.handleShowless}>
+                        SHOW LESS
+                      </BootstrapButton>
+                    </Typography>
+                    <br/><br/>
+                </div>
+                <div className="col-md-7" style = {this.state.style2} onMouseEnter = {this.style2Change1} onMouseLeave = {this.style2Change2}>
+                  <br/>
+                  {/* <BootstrapButton className="float-right" variant="outline-warning" onClick = {this.handleShowless}>
+                        <CancelIcon/>
+                  </BootstrapButton> */}
+                  <br/>
+                <Row>
+                  <div className="offset-md-1"></div>
+                  <div className = "col-md-5" style = {this.state.style21} onMouseEnter = {this.style21Change1} onMouseLeave = {this.style21Change2}>
+                    <br/><br/>
+                    <Typography className = "nav-link text-center" component = {Link} to="/aboutus" variant="h3" style={this.state.styleText1} onMouseEnter = {this.styleText1Change1} onMouseLeave = {this.styleText1Change2}>
+                      About us
+                    </Typography>
+                    <br/><br/>
+                </div>
+                <div className = "col-md-5" style = {this.state.style22} onMouseEnter = {this.style22Change1} onMouseLeave = {this.style22Change2}>
+                    <br/><br/>
+                    <Typography className = "nav-link text-center" component = {Link} to="/contactus" variant="h3" style={this.state.styleText2} onMouseEnter = {this.styleText2Change1} onMouseLeave = {this.styleText2Change2}>
+                      Contact us
+                    </Typography>
+                    <br/><br/>
+                </div>
+                <div className="offset-md-1"></div>
+                </Row>
+                </div>
+                </Row>
+                <br/><br/>
+                </div>
+            }
             <ScrollUpButton/>
-            </Navbar>
-            </BrowserRouter>
             </Container>
         </Fragment>
     }
